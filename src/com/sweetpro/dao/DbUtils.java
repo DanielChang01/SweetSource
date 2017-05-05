@@ -9,9 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by danielchang on 2017/5/5.
- */
+
 public class DbUtils {
 
     private static Connection getConn(){

@@ -16,20 +16,20 @@ public class CommondAttr {
      * 商家：SHOP
      */
 
-    public static final String USER_INSERT = "11";//对Users表进行插入
-    public static final String USER_UPDATE = "21";//对Users表进行更新
-    public static final String USER_SELECT = "31";//对Users表进行查找
-    public static final String USER_DELETE = "41";//对Users表字段进行删除
+    public static final int USER_INSERT = 11;//对Users表进行插入
+    public static final int USER_UPDATE = 21;//对Users表进行更新
+    public static final int USER_SELECT = 31;//对Users表进行查找
+    public static final int USER_DELETE = 41;//对Users表字段进行删除
 
-    public static final String SHOP_INSERT = "12";
-    public static final String SHOP_UPDATE = "22";
-    public static final String SHOP_SELECT = "32";
-    public static final String SHOP_DELETE = "42";
+    public static final int SHOP_INSERT = 12;
+    public static final int SHOP_UPDATE = 22;
+    public static final int SHOP_SELECT = 32;
+    public static final int SHOP_DELETE = 42;
 
-    public static final String DISH_INSERT = "13";
-    public static final String DISH_UPDATE = "23";
-    public static final String DISH_SELECT = "33";
-    public static final String DISH_DELETE = "43";
+    public static final int DISH_INSERT = 13;
+    public static final int DISH_UPDATE = 23;
+    public static final int DISH_SELECT = 33;
+    public static final int DISH_DELETE = 43;
 
     public static final String TBNAME_USERS = "users";
     public static final String TBNAME_SHOP = "shop";

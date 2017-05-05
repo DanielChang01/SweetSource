@@ -1,7 +1,5 @@
 package com.sweetpro.server;
 
-import com.sweetpro.entities.CommondAttr;
-
 import java.io.*;
 import java.net.Socket;
 
@@ -27,7 +25,7 @@ public class ServerThread extends Thread {
             bufferedReader = new BufferedReader(inputStreamReader);
             String info = null;
             while((info = bufferedReader.readLine()) != null){
-                System.out.println(info);
+                getInfoHandled(info);
             }
 
             socket.shutdownInput();
@@ -64,6 +62,28 @@ public class ServerThread extends Thread {
             }
 
 
+        }
+    }
+
+    private void getInfoHandled(String info) {
+        String[] strings = info.split(";");
+        int handleAttr = Integer.parseInt(strings[0]);
+        switch(handleAttr%10)
+        {
+            case 1: //将数据进行持久化操作，返回持久化list集合
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
+        }
+
+        switch(handleAttr/10)
+        {
+            case 1://对持久化类进行插入数据库操作
+                break;
         }
     }
 }
