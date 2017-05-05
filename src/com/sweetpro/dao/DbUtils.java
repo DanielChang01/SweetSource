@@ -6,6 +6,8 @@ import com.sweetpro.entities.ShopEntity;
 import com.sweetpro.entities.UsersEntity;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by danielchang on 2017/5/5.
@@ -168,12 +170,81 @@ public class DbUtils {
         return i;
     }
 
-    private static int queryShop(){
-        return 0;
+    private static List<ShopEntity> queryShop(){
+        Connection conn = getConn();
+        ResultSet result = null;
+        List<ShopEntity> myShop = null;
+        String sql = "select * from "+CommondAttr.TBNAME_SHOP;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = conn.prepareStatement(sql);
+            result = preparedStatement.executeQuery();
+            if (result != null){
+                myShop = convertToShopList(result);
+            }
+            releaseResource(preparedStatement,conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return myShop;
     }
 
-    private static int queryDish(){
-        return 0;
+    private static List<ShopEntity> convertToShopList(ResultSet result) {
+        List<ShopEntity> myShop = new ArrayList<>();
+        try {
+            while(result.next()){
+                ShopEntity shopEntity = new ShopEntity();
+                shopEntity.setShopName(result.getString(CommondAttr.SHOP_NAME));
+                shopEntity.setShopAddr(result.getString(CommondAttr.SHOP_ADDR));
+                shopEntity.setShopPic(result.getString(CommondAttr.SHOP_PIC));
+                shopEntity.setShopPoint(result.getString(CommondAttr.SHOP_POINT));
+                myShop.add(shopEntity);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return myShop;
+    }
+
+    private static List<DishEntity> queryDish(String shop_id){
+        Connection conn = getConn();
+        ResultSet result = null;
+        List<DishEntity> myDish = null;
+        String sql = "select * from "+CommondAttr.TBNAME_DISH+" where "+
+                CommondAttr.DISH_SHOP_ID+"='"+shop_id+"'";
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = conn.prepareStatement(sql);
+            result = preparedStatement.executeQuery();
+            if (result != null){
+                myDish = convertToDishList(result);
+            }
+            releaseResource(preparedStatement,conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return myDish;
+    }
+
+    private static List<DishEntity> convertToDishList(ResultSet result) {
+        List<DishEntity> myDish = new ArrayList<>();
+        try {
+            while(result.next()){
+                DishEntity dishEntity = new DishEntity();
+                dishEntity.setDishName(result.getString(CommondAttr.DISH_NAME));
+                dishEntity.setDishDescribe(result.getString(CommondAttr.DISH_DESC));
+                dishEntity.setDishCategory(result.getString(CommondAttr.DISH_CATEGORY));
+//                dishEntity.setDishPic(result.getString(CommondAttr.DISH_PIC));
+                dishEntity.setDishPrePrice(result.getString(CommondAttr.DISH_PRE_PRICE));
+                dishEntity.setDishCutPrice(result.getString(CommondAttr.DISH_CUT_PRICE));
+                myDish.add(dishEntity);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return myDish;
+
     }
 
 
