@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3998352-26b8-45ba-87fe-4382e217f004" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sweetpro/dao/DbUtils.java" afterPath="$PROJECT_DIR$/src/com/sweetpro/dao/DbUtils.java" />
-    </list>
+    <list default="true" id="a3998352-26b8-45ba-87fe-4382e217f004" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,8 +36,8 @@
       <file leaf-file-name="DbUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/sweetpro/dao/DbUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="116" column="12" lean-forward="false" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
+            <state relative-caret-position="-499">
+              <caret line="116" column="12" lean-forward="true" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1493988696000" expanded="true" signature="978:1064" ph="insert into users... " />
@@ -689,12 +687,12 @@
       <option name="presentableId" value="Default" />
       <updated>1493970281708</updated>
       <workItem from="1493970283148" duration="9442000" />
-      <workItem from="1493986556291" duration="1533000" />
+      <workItem from="1493986556291" duration="1699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10975000" />
+    <option name="totallyTimeSpent" value="11141000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="214" y="27" width="1055" height="682" extended-state="0" />
@@ -1006,8 +1004,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sweetpro/dao/DbUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="116" column="12" lean-forward="false" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
+        <state relative-caret-position="-499">
+          <caret line="116" column="12" lean-forward="true" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1493988696000" expanded="true" signature="978:1064" ph="insert into users... " />
