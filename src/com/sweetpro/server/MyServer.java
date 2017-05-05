@@ -5,9 +5,7 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * Created by danielchang on 2017/5/5.
- */
+
 public class MyServer {
 
     public static void main(String[] args){

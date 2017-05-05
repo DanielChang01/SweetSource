@@ -1,11 +1,11 @@
 package com.sweetpro.server;
 
+import com.sweetpro.entities.CommondAttr;
+
 import java.io.*;
 import java.net.Socket;
 
-/**
- * Created by danielchang on 2017/5/5.
- */
+
 public class ServerThread extends Thread {
 
     Socket socket = null;
@@ -35,6 +35,7 @@ public class ServerThread extends Thread {
             printWriter = new PrintWriter(outputStream);
             printWriter.write("something");
             printWriter.flush();
+
 
         } catch (IOException e) {
             e.printStackTrace();
