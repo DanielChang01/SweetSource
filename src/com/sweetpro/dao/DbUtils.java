@@ -5,10 +5,7 @@ import com.sweetpro.entities.DishEntity;
 import com.sweetpro.entities.ShopEntity;
 import com.sweetpro.entities.UsersEntity;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * Created by danielchang on 2017/5/5.
@@ -116,6 +113,11 @@ public class DbUtils {
         return i;
     }
 
+    /**
+     * 更新店铺表
+     * @param shop
+     * @return
+     */
     private static int updateShop(ShopEntity shop){
         Connection conn = getConn();
         int i = 0;
@@ -138,6 +140,11 @@ public class DbUtils {
         return i;
     }
 
+    /**
+     * 更新菜品表
+     * @param dish
+     * @return
+     */
     private static int updateDish(DishEntity dish){
         Connection conn = getConn();
         int i = 0;
@@ -169,8 +176,45 @@ public class DbUtils {
         return 0;
     }
 
-    private static int queryUsers(){
-        return 0;
+
+    /**
+     * 返回值规定：两位十进制数字（0，1）
+     * 第一位表示登录是否成功：成功为 1 ，失败为 0
+     * 第二位表示登录者身份：商家 1， 普通用户  0（管理员 2 未参与）
+     * @param user
+     * @return
+     */
+    private static String userLogin(UsersEntity user){
+        Connection conn = getConn();
+        StringBuilder sb = new StringBuilder();
+        String select_sql = "select * from "+CommondAttr.TBNAME_USERS +" " +
+                "where "+ CommondAttr.USER_NAME+"="+user.getUserName();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = conn.prepareStatement(select_sql);
+            ResultSet result = preparedStatement.executeQuery();
+            if (result != null){
+                if (result.isFirst()){
+                    if (user.getPassWord().equals(result.getString(CommondAttr.USER_PASS))){
+                        sb.append("1");
+                    } else {
+                        sb.append("0");
+                    }
+                    if (result.getString(CommondAttr.USER_SHOP_ID)==null){
+                        sb.append("0");
+                    } else {
+                        sb.append("1");
+                    }
+                }
+            } else {
+                sb.append("00");
+            }
+            releaseResource(preparedStatement,conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return sb.toString();
     }
 
 
