@@ -1,6 +1,7 @@
 package com.sweetpro.server;
 
 import com.sweetpro.dao.DbUtils;
+import com.sweetpro.entities.CommondAttr;
 import com.sweetpro.entities.DishEntity;
 import com.sweetpro.entities.ShopEntity;
 import com.sweetpro.entities.UsersEntity;
@@ -131,9 +132,9 @@ public class ServerThread extends Thread {
                 break;
         }
         if (str_back != null){
-            return str_back;
+            return CommondAttr.SIGN_LOGIN+str_back;
         } else if (int_back != 0){
-            return String.valueOf(int_back);
+            return CommondAttr.SIGN_COMMON+String.valueOf(int_back);
         } else if (re_dish != null){
             return getStrDish(re_dish);
         } else if (re_shop != null){
@@ -143,8 +144,14 @@ public class ServerThread extends Thread {
         }
     }
 
+    /**
+     * 对数据进行打包
+     * @param re_shop
+     * @return
+     */
     private String getStrShop(ShopEntity re_shop) {
         StringBuilder sb = new StringBuilder();
+        sb.append(CommondAttr.SIGN_SHOP);
         sb.append(re_shop.getShopName()+";");
         sb.append(re_shop.getShopAddr()+";");
         sb.append(re_shop.getShopPic()+";");
@@ -155,6 +162,7 @@ public class ServerThread extends Thread {
 
     private String getStrDish(DishEntity re_dish) {
         StringBuilder sb = new StringBuilder();
+        sb.append(CommondAttr.SIGN_DISH);
         sb.append(re_dish.getDishShopID()+";");
         sb.append(re_dish.getDishName()+";");
         sb.append(re_dish.getDishCategory()+";");
@@ -166,6 +174,11 @@ public class ServerThread extends Thread {
         return sb.toString();
     }
 
+    /**
+     * 将来自客户端的数据进行持久化操作
+     * @param info
+     * @return
+     */
     private DishEntity setDishesValue(String info) {
         String[] strs = info.split(";");
         DishEntity dish = new DishEntity();

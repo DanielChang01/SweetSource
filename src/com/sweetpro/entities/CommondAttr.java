@@ -31,6 +31,20 @@ public class CommondAttr {
     public static final int DISH_SELECT = 33;
     public static final int DISH_DELETE = 43;
 
+    /**
+     * 对返回数据的规定
+     * 1，登录
+     * 2，普通操作
+     * 3，店铺
+     * 4，菜品
+     * 返回数据格式为：以上数字 + 内容
+     */
+    public static final String SIGN_LOGIN = "1;";
+    public static final String SIGN_COMMON = "2;";
+    public static final String SIGN_SHOP = "3;";
+    public static final String SIGN_DISH = "4;";
+
+
     public static final String TBNAME_USERS = "users";
     public static final String TBNAME_SHOP = "shop";
     public static final String TBNAME_DISH = "dish";
