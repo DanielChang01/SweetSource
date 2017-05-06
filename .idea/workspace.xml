@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3998352-26b8-45ba-87fe-4382e217f004" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sweetpro/entities/CommondAttr.java" afterPath="$PROJECT_DIR$/src/com/sweetpro/entities/CommondAttr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/sweetpro/server/ServerThread.java" afterPath="$PROJECT_DIR$/src/com/sweetpro/server/ServerThread.java" />
-    </list>
+    <list default="true" id="a3998352-26b8-45ba-87fe-4382e217f004" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +26,8 @@
       <file leaf-file-name="CommondAttr.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/sweetpro/entities/CommondAttr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="47" column="54" lean-forward="true" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
+            <state relative-caret-position="335">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -642,12 +639,12 @@
       <workItem from="1493970283148" duration="9442000" />
       <workItem from="1493986556291" duration="4620000" />
       <workItem from="1493997224087" duration="3701000" />
-      <workItem from="1494037990172" duration="3952000" />
+      <workItem from="1494037990172" duration="4617000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21715000" />
+    <option name="totallyTimeSpent" value="22380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="27" width="1265" height="682" extended-state="0" />
@@ -997,8 +994,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sweetpro/entities/CommondAttr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="47" column="54" lean-forward="true" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
+        <state relative-caret-position="335">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
