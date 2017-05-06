@@ -110,9 +110,6 @@ public class ServerThread extends Thread {
             case 11://对持久化类进行插入数据库操作
                 int_back = dbUtils.insertUsers(user);
                 break;
-            case 12:
-                int_back = dbUtils.insertShop(shop);
-                break;
             case 13:
                 int_back = dbUtils.insertDish(dish);
                 break;
@@ -120,10 +117,10 @@ public class ServerThread extends Thread {
                 str_back = dbUtils.userLogin(user);
                 break;
             case 23:
-                dbUtils.updateDish(dish);
+                int_back = dbUtils.updateDish(dish);
                 break;
             case 22:
-                dbUtils.updateShop(shop);
+                int_back = dbUtils.updateShop(shop);
                 break;
             case 32:
                 re_shop = (ShopEntity) dbUtils.queryShop();

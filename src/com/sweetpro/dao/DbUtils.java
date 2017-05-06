@@ -51,6 +51,12 @@ public class DbUtils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        //如果shop_id 不为空，则插入shop表中
+        if (user.getShopID() != null){
+            ShopEntity shop = new ShopEntity();
+            shop.setShopID(user.getShopID());
+            insertShop(shop);
+        }
 
         return i;
     }
@@ -87,24 +93,16 @@ public class DbUtils {
         return i;
     }
 
-    public int insertShop(ShopEntity shop){
+    private int insertShop(ShopEntity shop){
         Connection conn = getConn();
         int i = 0;
         String sql = "insert into "+CommondAttr.TBNAME_SHOP+" ("+
-                CommondAttr.SHOP_ID+","+
-                CommondAttr.SHOP_NAME+","+
-                CommondAttr.SHOP_ADDR+","+
-                CommondAttr.SHOP_PIC+","+
-                CommondAttr.SHOP_POINT+")" +
-                " values(?,?,?,?,?)";
+                CommondAttr.SHOP_ID+")" +
+                " values(?)";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1,shop.getShopID());
-            preparedStatement.setString(2,shop.getShopName());
-            preparedStatement.setString(3,shop.getShopAddr());
-            preparedStatement.setString(4,shop.getShopPic());
-            preparedStatement.setString(5,shop.getShopPoint());
             i = preparedStatement.executeUpdate();
             releaseResource(preparedStatement,conn);
         } catch (SQLException e) {
