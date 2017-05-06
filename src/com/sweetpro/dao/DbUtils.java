@@ -12,7 +12,7 @@ import java.util.List;
 
 public class DbUtils {
 
-    private static Connection getConn(){
+    private Connection getConn(){
         String driver = "com.mysql.jdbc.driver";
         String url = "jdbc:mysql://localhost:3306/test_for_sweet";
         String userName = "root";
@@ -29,7 +29,7 @@ public class DbUtils {
         return conn;
     }
 
-    private static int insertUsers(UsersEntity user){
+    public int insertUsers(UsersEntity user){
         Connection conn = getConn();
         int i = 0;
         String sql = "insert into "+ CommondAttr.TBNAME_USERS+" ("+
@@ -55,7 +55,7 @@ public class DbUtils {
         return i;
     }
 
-    private static int insertDish(DishEntity dish){
+    public int insertDish(DishEntity dish){
         Connection conn = getConn();
         int i = 0;
         String sql = "insert into "+ CommondAttr.TBNAME_DISH+" ("+
@@ -71,7 +71,7 @@ public class DbUtils {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1,dish.getShopID());
+            preparedStatement.setString(1,dish.getDishShopID());
             preparedStatement.setString(2,dish.getDishName());
             preparedStatement.setString(3,dish.getDishDescribe());
             preparedStatement.setString(4,dish.getDishCategory());
@@ -87,7 +87,7 @@ public class DbUtils {
         return i;
     }
 
-    private static int insertShop(ShopEntity shop){
+    public int insertShop(ShopEntity shop){
         Connection conn = getConn();
         int i = 0;
         String sql = "insert into "+CommondAttr.TBNAME_SHOP+" ("+
@@ -118,7 +118,7 @@ public class DbUtils {
      * @param shop
      * @return
      */
-    private static int updateShop(ShopEntity shop){
+    public int updateShop(ShopEntity shop){
         Connection conn = getConn();
         int i = 0;
         String sql = "update "+CommondAttr.TBNAME_SHOP+" set "+
@@ -145,7 +145,7 @@ public class DbUtils {
      * @param dish
      * @return
      */
-    private static int updateDish(DishEntity dish){
+    public int updateDish(DishEntity dish){
         Connection conn = getConn();
         int i = 0;
         String sql = "update "+CommondAttr.TBNAME_DISH+" set "+
@@ -168,7 +168,7 @@ public class DbUtils {
         return i;
     }
 
-    private static List<ShopEntity> queryShop(){
+    public List<ShopEntity> queryShop(){
         Connection conn = getConn();
         ResultSet result = null;
         List<ShopEntity> myShop = null;
@@ -187,7 +187,7 @@ public class DbUtils {
         return myShop;
     }
 
-    private static List<ShopEntity> convertToShopList(ResultSet result) {
+    private List<ShopEntity> convertToShopList(ResultSet result) {
         List<ShopEntity> myShop = new ArrayList<>();
         try {
             while(result.next()){
@@ -204,12 +204,12 @@ public class DbUtils {
         return myShop;
     }
 
-    private static List<DishEntity> queryDish(String shop_id){
+    public List<DishEntity> queryDish(DishEntity dish){
         Connection conn = getConn();
         ResultSet result = null;
         List<DishEntity> myDish = null;
         String sql = "select * from "+CommondAttr.TBNAME_DISH+" where "+
-                CommondAttr.DISH_SHOP_ID+"='"+shop_id+"'";
+                CommondAttr.DISH_SHOP_ID+"='"+dish.getDishShopID()+"'";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = conn.prepareStatement(sql);
@@ -225,7 +225,7 @@ public class DbUtils {
         return myDish;
     }
 
-    private static List<DishEntity> convertToDishList(ResultSet result) {
+    private List<DishEntity> convertToDishList(ResultSet result) {
         List<DishEntity> myDish = new ArrayList<>();
         try {
             while(result.next()){
@@ -253,7 +253,7 @@ public class DbUtils {
      * @param user
      * @return
      */
-    private static String userLogin(UsersEntity user){
+    public String userLogin(UsersEntity user){
         Connection conn = getConn();
         StringBuilder sb = new StringBuilder();
         String select_sql = "select * from "+CommondAttr.TBNAME_USERS +" " +
@@ -285,16 +285,9 @@ public class DbUtils {
 
         return sb.toString();
     }
+    
 
-
-
-
-
-
-
-
-
-    private static void releaseResource(PreparedStatement preparedStatement, Connection conn) throws SQLException {
+    private void releaseResource(PreparedStatement preparedStatement, Connection conn) throws SQLException {
         preparedStatement.close();
         conn.close();
     }

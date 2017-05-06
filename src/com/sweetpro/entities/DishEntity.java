@@ -5,7 +5,7 @@ public class DishEntity {
     public void DishEntity(){}
 
     private String dishID;
-    private String shopID;
+    private String dishShopID;
     private String dishName;
     private String dishDescribe;
     private String dishCategory;
@@ -21,12 +21,12 @@ public class DishEntity {
         this.dishID = dishID;
     }
 
-    public String getShopID() {
-        return shopID;
+    public String getDishShopID() {
+        return dishShopID;
     }
 
-    public void setShopID(String shopID) {
-        this.shopID = shopID;
+    public void setDishShopID(String dishShopID) {
+        this.dishShopID = dishShopID;
     }
 
     public String getDishName() {
