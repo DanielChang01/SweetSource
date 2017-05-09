@@ -15,6 +15,7 @@ public class CommondAttr {
      * 用户：USER
      * 商家：SHOP
      */
+    public static final int TCP_PORT = 5432;
 
     public static final int USER_INSERT = 11;//对Users表进行插入
     public static final int USER_UPDATE = 21;//对Users表进行更新
@@ -48,6 +49,7 @@ public class CommondAttr {
     public static final String TBNAME_USERS = "users";
     public static final String TBNAME_SHOP = "shop";
     public static final String TBNAME_DISH = "dish";
+    public static final String TBNAME_DEVICE = "device_info";
 
 
     public static final String USER_ID = "user_id";
@@ -70,6 +72,10 @@ public class CommondAttr {
     public static final String SHOP_ADDR = "shop_addr";
     public static final String SHOP_PIC = "shop_pic";
     public static final String SHOP_POINT = "shop_point";
+
+    public static final String DEVICE_MAC = "user_mac_addr";
+    public static final String DEVICE_IP = "user_ip";
+    public static final String DEVICE_USER_MOBILE = "user_mobile";
 
 
 

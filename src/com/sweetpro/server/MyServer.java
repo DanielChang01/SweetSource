@@ -1,5 +1,7 @@
 package com.sweetpro.server;
 
+import com.sweetpro.entities.CommondAttr;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
@@ -12,7 +14,7 @@ public class MyServer {
 
         try {
             //1.
-            ServerSocket serverSocket = new ServerSocket(54321);
+            ServerSocket serverSocket = new ServerSocket(CommondAttr.TCP_PORT);
             Socket socket = null;
 
             int count = 0;
