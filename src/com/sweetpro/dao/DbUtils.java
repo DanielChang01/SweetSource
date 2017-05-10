@@ -343,6 +343,66 @@ public class DbUtils {
         return i;
     }
 
+    /**
+     * 店铺消费情况统计表
+     */
+    public int insertDiscount(DiscountEntity discount){
+
+        int i = 0;
+
+        return i;
+    }
+
+    /**
+     * 更新表字段，做统计
+     * @param discount
+     * @return
+     */
+    public int updateDiscount(DiscountEntity discount){
+        int i = 0;
+
+        return i;
+    }
+
+    /**
+     * 根据用户和店铺ID，进行表的清除
+     * @param discount
+     * @return
+     */
+    public int clearPerDiscount(DiscountEntity discount){
+        int i = 0;
+
+        return i;
+    }
+
+    public int clearAllDiscount(DiscountEntity discount){
+        int i = 0;
+
+        return i;
+    }
+
+
+    /**
+     * 订单表
+     * @param order
+     * @return
+     */
+    public int insertOrders(OrdersEntity order){
+        int i = 0;
+
+        return i;
+    }
+
+    public int deleteOrderById(OrdersEntity order){
+        int i = 0;
+
+        return i;
+    }
+
+//    public int alterOrders(){}
+
+
+
     
 
     private void releaseResource(PreparedStatement preparedStatement, Connection conn) throws SQLException {

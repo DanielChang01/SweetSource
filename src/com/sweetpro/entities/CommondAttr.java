@@ -50,9 +50,10 @@ public class CommondAttr {
     public static final String TBNAME_SHOP = "shop";
     public static final String TBNAME_DISH = "dish";
     public static final String TBNAME_DEVICE = "device_info";
+    public static final String TBNAME_DISCOUNT = "discount";
+    public static final String TBNAME_ORDER = "orders";
 
 
-    public static final String USER_ID = "user_id";
     public static final String USER_NAME = "user_name";
     public static final String USER_PASS = "user_pass";
     public static final String USER_MOBILE = "user_mobile";
@@ -77,6 +78,14 @@ public class CommondAttr {
     public static final String DEVICE_IP = "user_ip";
     public static final String DEVICE_USER_MOBILE = "user_mobile";
 
+    public static final String DIS_MOBILE = "user_mobile";
+    public static final String DIS_SHOPID = "shop_id";
+    public static final String DIS_CONSUME_TIMES ="consume_times";
+    public static final String DIS_CONSUME_SUM = "consume_sum";
 
+    public static final String ORDER_ID = "order_id";
+    public static final String ORDER_FROM = "order_from_mobile";
+    public static final String ORDER_TO = "order_to_mobile";
+    public static final String ORDER_MONEY = "order_money";
 
 }
