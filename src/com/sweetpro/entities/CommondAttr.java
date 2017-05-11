@@ -32,6 +32,13 @@ public class CommondAttr {
     public static final int DISH_SELECT = 33;
     public static final int DISH_DELETE = 43;
 
+
+    public static final String DB_DRIVER = "com.mysql.jdbc.driver";
+    public static final String DB_URL = "jdbc:mysql://localhost:3306/test_for_sweet";
+    public static final String DB_USERNAME = "root";
+    public static final String DB_PASSWORD = "root";
+
+
     /**
      * 对返回数据的规定
      * 1，登录
